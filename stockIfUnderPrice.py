@@ -6,13 +6,13 @@ import requests, bs4, smtplib, time, openpyxl
 
 def compare_price(URL, set_price, user_agent, body):
     """ Compares set price for company stock to the price scraped off of Yahoo Finance
-        using BeautifulSoup and returns an updated report
+        using BeautifulSoup and returns an updated report.
 
     Args:
-        URL: Yahoo Finance URL where price is scrapped
-        set_price: Desired price for that stock
-        user_agent: The User-Agent associated with computer
-        body: total report on which prices have dipped below desired prices
+        URL: Yahoo Finance URL where price is scrapped.
+        set_price: Desired price for that stock.
+        user_agent: The User-Agent associated with computer.
+        body: total report on which prices have dipped below desired prices.
 
     Returns:
         Updated total report on which prices have dipped below desired prices.
@@ -44,12 +44,12 @@ def compare_price(URL, set_price, user_agent, body):
 
 def send_email(gmail_address, gmail_password,
                receiving_email, body):
-    """ Sends email from a gmail account to a receiving email address
+    """ Sends email from a gmail account to a receiving email address.
     Args:
-        gmail_address: sender gmail address
-        gmail_password: sender gmail password
-        receiving_email: receiving email address
-        body: the body of the email message being sent
+        gmail_address: sender gmail address.
+        gmail_password: sender gmail password.
+        receiving_email: receiving email address.
+        body: the body of the email message being sent.
     """
     # Setting up sender email
     server = smtplib.SMTP('smtp.gmail.com', 587)
@@ -71,11 +71,11 @@ def send_email(gmail_address, gmail_password,
 
 def extracting_values(excel_file):
     """ Extracts all data from excel file and uses that data to compare
-        prices to build a report that is sent by email
+        prices to build a report that is sent by email.
 
     Args:
         excel_file: data.xlsx which contains all required data
-                    regarding emails, User-Agent, URLs, and set prices
+                    regarding emails, User-Agent, URLs, and set prices.
     """
     wb = openpyxl.load_workbook(excel_file)
     sheet = wb['Sheet1']
