@@ -48,7 +48,7 @@ $ chmod +x stockIfUnderPrice.py
 To run
 
 ```
-$ ./stockIfUnderPrice.py
+$ python3 stockIfUnderPrice.py
 ```
 
 ## Dependencies
